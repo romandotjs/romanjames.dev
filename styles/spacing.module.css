@@ -1,0 +1,63 @@
+/* Top margin */
+
+.mt1 {
+  margin-top: 0.333333rem;
+}
+
+.mt2 {
+  margin-top: 0.666666rem;
+}
+
+.mt3 {
+  margin-top: 1rem;
+}
+
+.mt4 {
+  margin-top: 2rem;
+}
+
+/* Vertical margin */
+
+.my1 {
+  margin-top: 0.333333rem;
+  margin-bottom: 0.333333rem;
+}
+
+.my2 {
+  margin-top: 0.666666rem;
+  margin-bottom: 0.666666rem;
+}
+
+.my3 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Vertical padding*/
+
+.py1 {
+  padding-top: 0.333333rem;
+  padding-bottom: 0.333333rem;
+}
+
+.py2 {
+  padding-top: 0.666666rem;
+  padding-bottom: 0.666666rem;
+}
+
+/* Horizontal padding */
+
+.px1 {
+  padding-left: 0.333333rem;
+  padding-right: 0.333333rem;
+}
+
+/* Right padding */
+
+.pr1 {
+  margin-right: 0.333333rem;
+}
+
+.pr2 {
+  margin-right: 0.666666rem;
+}
