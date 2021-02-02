@@ -1,7 +1,7 @@
 import Link from "next/link";
 import cx from "classnames";
 import Image from "./image";
-import Date from "./Date";
+import Date from "./date";
 import spacing from "../styles/spacing.module.css";
 import timeToRead from "../lib/time-to-read";
 
