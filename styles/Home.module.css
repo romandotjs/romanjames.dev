@@ -1,22 +1,7 @@
-.container {
-  min-height: 100vh;
-  padding: 1rem;
-}
-
 .header {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
-
-/* CARD */
-
-.thumbnail {
-  border-radius: 0.333333rem;
-}
-
-.greyText {
-  color: #787878;
 }
 
 /* .footer {
