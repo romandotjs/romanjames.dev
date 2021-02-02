@@ -1,0 +1,26 @@
+.container {
+  min-height: 100vh;
+}
+
+.content {
+  p {
+    margin: 1rem 0;
+  }
+  h2 {
+    margin: 1.666666rem 0 1rem;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.postHeader {
+  justify-content: space-between;
+}
+
+.image {
+  border-radius: 0.333333rem;
+  width: 100%;
+}

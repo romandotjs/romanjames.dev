@@ -1,12 +1,9 @@
-import Link from "next/link";
-import cx from "classnames";
 import Container from "../components/container";
+import Header from "../components/header";
 import SectionTitle from "../components/section-title";
 import ArticleCard from "../components/article-card";
 import { getAllPostsForHome } from "../lib/api";
 import splitTitle from "../lib/split-title";
-import styles from "../styles/Home.module.css";
-import spacing from "../styles/spacing.module.css";
 
 export default function Home({ allPosts: { edges } }) {
   const heroPost = edges[0]?.node;
@@ -14,16 +11,10 @@ export default function Home({ allPosts: { edges } }) {
 
   return (
     <Container>
-      <header className={cx(styles.header, spacing.pr2)}>
-        <Link href="/about">
-          <a>
-            <img src="/person.svg" alt="About Roman" />
-          </a>
-        </Link>
-      </header>
+      <Header />
 
-      <main className={spacing.mt1}>
-        <SectionTitle>Latest Book</SectionTitle>
+      <main className="mt-1">
+        <SectionTitle className="text-5xl">Latest Book</SectionTitle>
 
         <ArticleCard
           slug={heroPost.slug}
@@ -35,7 +26,7 @@ export default function Home({ allPosts: { edges } }) {
           content={heroPost.content}
         />
 
-        <SectionTitle className={spacing.mt4}>Recents</SectionTitle>
+        <SectionTitle className="mt-4 text-5xl">Recents</SectionTitle>
 
         {morePosts.length > 0 &&
           morePosts.map(({ node }, index) => (

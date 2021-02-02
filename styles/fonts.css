@@ -1,3 +1,48 @@
+p,
+.text-base {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.text-sm,
+small {
+  font-size: 0.833333rem;
+}
+
+.text-lg,
+h3 {
+  font-size: 1.166666rem;
+}
+
+.text-xl {
+  font-size: 1.333333rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-3xl,
+h2 {
+  font-size: 1.666666rem;
+}
+
+.text-4xl {
+  font-size: 1.833333rem;
+}
+
+h1,
+.text-5xl {
+  font-size: 2rem;
+}
+
+.font-bold,
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
 /* lato-regular - latin */
 @font-face {
   font-family: "Lato";

@@ -1,14 +1,14 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Container from "../../components/container";
+import Header from "../../components/header";
 import Img from "../../components/image";
 import Date from "../../components/date";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
 import { SITE_NAME } from "../../lib/constants";
 import splitTitle from "../../lib/split-title";
 import timeToRead from "../../lib/time-to-read";
-import styles from "../../styles/Post.module.css";
-import spacing from "../../styles/spacing.module.css";
+import styles from "../../styles/components.module.scss";
 
 export default function Post({ post, posts }) {
   const router = useRouter();
@@ -26,6 +26,7 @@ export default function Post({ post, posts }) {
           content={post.featuredImage?.node?.sourceUrl}
         />
       </Head>
+      <Header />
       <h1>
         <em>{splitTitle(post.title).title}</em>
         <br />
@@ -33,7 +34,7 @@ export default function Post({ post, posts }) {
       </h1>
       <Date
         string={post.date}
-        className={spacing.my3}
+        className="my-3"
         timeToRead={timeToRead(post.content)}
       />
       <Img src={post.featuredImage?.node?.sourceUrl} />

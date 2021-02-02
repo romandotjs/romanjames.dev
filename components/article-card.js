@@ -2,7 +2,6 @@ import Link from "next/link";
 import cx from "classnames";
 import Image from "./image";
 import Date from "./date";
-import spacing from "../styles/spacing.module.css";
 import timeToRead from "../lib/time-to-read";
 
 export default ({
@@ -16,16 +15,13 @@ export default ({
 }) => (
   <Link as={`/posts/${slug}`} href="/posts/[slug]">
     <a>
-      <article className={spacing.my3}>
+      <article className="my-3">
         <Image src={coverImage.sourceUrl} />
-        <div className={cx(spacing.py2, spacing.px1)}>
-          <h3>
+        <div className="py-2 px-1">
+          <h3 className="text-md">
             <em>{title}</em> by {author}
           </h3>
-          <div
-            className={spacing.mt1}
-            dangerouslySetInnerHTML={{ __html: snippet }}
-          />
+          <div className="mt-1" dangerouslySetInnerHTML={{ __html: snippet }} />
           <Date string={date} timeToRead={timeToRead(content)} />
         </div>
       </article>
