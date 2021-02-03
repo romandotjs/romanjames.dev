@@ -7,7 +7,7 @@ export default ({ string, className, timeToRead }) => {
     date = date.slice(0, date.length - 6);
 
   return (
-    <p className={cx("text-gray", "mt-1", className)}>
+    <p className={cx("text-gray-500", "mt-1", className)}>
       <small>
         <time dateTime={string}>{date}</time>
         {timeToRead && <>&nbsp;&nbsp;·&nbsp;&nbsp;{timeToRead}</>}

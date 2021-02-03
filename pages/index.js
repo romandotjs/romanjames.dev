@@ -1,5 +1,3 @@
-import Container from "../components/container";
-import Header from "../components/header";
 import SectionTitle from "../components/section-title";
 import ArticleCard from "../components/article-card";
 import { getAllPostsForHome } from "../lib/api";
@@ -10,11 +8,9 @@ export default function Home({ allPosts: { edges } }) {
   const morePosts = edges.slice(1);
 
   return (
-    <Container>
-      <Header />
-
-      <main className="mt-1">
-        <SectionTitle className="text-5xl">Latest Book</SectionTitle>
+    <>
+      <main>
+        <SectionTitle className="text-5xl font-black">Latest Book</SectionTitle>
 
         <ArticleCard
           slug={heroPost.slug}
@@ -26,7 +22,9 @@ export default function Home({ allPosts: { edges } }) {
           content={heroPost.content}
         />
 
-        <SectionTitle className="mt-4 text-5xl">Recents</SectionTitle>
+        <SectionTitle className="mt-4 text-5xl font-black">
+          Recents
+        </SectionTitle>
 
         {morePosts.length > 0 &&
           morePosts.map(({ node }, index) => (
@@ -34,15 +32,15 @@ export default function Home({ allPosts: { edges } }) {
               key={index}
               slug={node.slug}
               coverImage={node.featuredImage?.node}
-              title={node.title.match(/.+(?= by)/g)[0]}
-              author={node.title.replace(/.+by /g, "")}
+              title={splitTitle(node.title).title}
+              author={splitTitle(node.title).author}
               snippet={node.excerpt}
               date={node.date}
               content={node.content}
             />
           ))}
       </main>
-    </Container>
+    </>
   );
 }
 

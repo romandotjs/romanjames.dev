@@ -1,5 +1,4 @@
 import Link from "next/link";
-import cx from "classnames";
 import Image from "./image";
 import Date from "./date";
 import timeToRead from "../lib/time-to-read";

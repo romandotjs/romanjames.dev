@@ -1,7 +1,5 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Container from "../../components/container";
-import Header from "../../components/header";
 import Img from "../../components/image";
 import Date from "../../components/date";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
@@ -16,7 +14,7 @@ export default function Post({ post, posts }) {
   if (router.isFallback) return <Container>Loading...</Container>;
 
   return (
-    <Container>
+    <>
       <Head>
         <title>
           {post.title} | {SITE_NAME}
@@ -26,8 +24,7 @@ export default function Post({ post, posts }) {
           content={post.featuredImage?.node?.sourceUrl}
         />
       </Head>
-      <Header />
-      <h1>
+      <h1 className="font-black">
         <em>{splitTitle(post.title).title}</em>
         <br />
         By {splitTitle(post.title).author}
@@ -42,7 +39,7 @@ export default function Post({ post, posts }) {
         className={styles.content}
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
-    </Container>
+    </>
   );
 }
 

@@ -13,6 +13,21 @@
   margin-top: 2rem;
 }
 
+/* Margin RIGHT */
+
+.mr-1 {
+  margin-right: 0.333333rem;
+}
+.mr-2 {
+  margin-right: 0.666666rem;
+}
+.mr-3 {
+  margin-right: 1rem;
+}
+.mr-4 {
+  margin-right: 1.333333rem;
+}
+
 /* Margin BOTTOM */
 
 .mb-1 {
@@ -69,12 +84,7 @@
   padding-left: 0.333333rem;
   padding-right: 0.333333rem;
 }
-
-/* Padding RIGHT */
-
-.pr-1 {
-  margin-right: 0.333333rem;
-}
-.pr-2 {
-  margin-right: 0.666666rem;
+.px-2 {
+  padding-left: 0.666666rem;
+  padding-right: 0.666666rem;
 }
