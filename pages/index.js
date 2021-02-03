@@ -1,7 +1,7 @@
 import SectionTitle from "../components/section-title";
 import ArticleCard from "../components/article-card";
 import { getAllPostsForHome } from "../lib/api";
-import splitTitle from "../lib/split-title";
+import { splitTitle } from "../lib/helpers";
 
 export default function Home({ allPosts: { edges } }) {
   const heroPost = edges[0]?.node;

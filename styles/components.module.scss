@@ -12,10 +12,6 @@
 }
 
 .nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
   a:hover, // why does :hover persist after route change on iOS Safari?
   a:active {
     svg {
@@ -27,20 +23,8 @@
     }
   }
 
-  a:last-child {
-    display: flex;
-    align-items: center; // icon itself isn't centered in <a>
-  }
-
   p {
     transition: color 0.333333s;
-  }
-
-  svg {
-    width: 1.666666rem;
-    height: auto;
-    fill: #999999;
-    transition: fill 0.333333s;
   }
 }
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 // import { useRouter } from "next/router";
 import cx from "classnames";
-import PersonCircle from "../components/person-circle";
+import { PersonCircle } from "../components/icons";
 import styles from "../styles/components.module.scss";
 
 export default () => {
@@ -9,7 +9,7 @@ export default () => {
   // const isHome = router.pathname === "/";
 
   return (
-    <nav className={cx(styles.nav, "mb-3")}>
+    <nav className={cx(styles.nav, "mb-3 flex justify-between align-center")}>
       <Link href="/">
         <a>
           <p className="font-black text-xl mr-4 text-gray-400">
@@ -18,8 +18,9 @@ export default () => {
         </a>
       </Link>
       <Link href="/about">
-        <a title="About">
-          <PersonCircle className="mr-2" />
+        {/* icon itself isn't vertically centered by default */}
+        <a title="About" className="flex align-center">
+          <PersonCircle />
         </a>
       </Link>
     </nav>
