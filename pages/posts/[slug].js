@@ -11,7 +11,7 @@ import styles from "../../styles/components.module.scss";
 export default function Post({ post, posts }) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) return <ErrorPage statusCode={404} />;
-  if (router.isFallback) return <Container>Loading...</Container>;
+  if (router.isFallback) return <>Loading...</>;
 
   return (
     <>
