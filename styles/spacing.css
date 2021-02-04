@@ -10,6 +10,12 @@
   margin-top: 1rem;
 }
 .mt-4 {
+  margin-top: 1.333333rem;
+}
+.mt-5 {
+  margin-top: 1.666666rem;
+}
+.mt-6 {
   margin-top: 2rem;
 }
 
@@ -40,6 +46,12 @@
   margin-bottom: 1rem;
 }
 .mb-4 {
+  margin-bottom: 1.333333rem;
+}
+.mb-5 {
+  margin-bottom: 1.666666rem;
+}
+.mb-6 {
   margin-bottom: 2rem;
 }
 

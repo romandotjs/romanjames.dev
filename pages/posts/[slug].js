@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -13,6 +14,9 @@ export default function Post({ post, posts }) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) return <ErrorPage statusCode={404} />;
   if (router.isFallback) return <>Loading...</>;
+
+  const [absoluteURL, setAbsoluteURL] = useState("");
+  useEffect(() => setAbsoluteURL(window.location.href), []);
 
   return (
     <>
@@ -41,29 +45,45 @@ export default function Post({ post, posts }) {
         className={styles.content}
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
-      <div className="mt-4 flex justify-between align-center">
+      <div className="mt-6 flex justify-between align-center">
         <div>
-          <Twitter className="mr-3" />
-          <Facebook />
+          <Link
+            href={`https://twitter.com/intent/tweet?url=${absoluteURL}&text=Interesting read, @romanthecoder`}
+          >
+            <a className="hover-black mr-3" target="_blank">
+              <Twitter />
+            </a>
+          </Link>
+          <Link
+            href={`https://www.facebook.com/sharer/sharer.php?u=${"https://google.com"}`}
+          >
+            <a className="hover-black" target="_blank">
+              <Facebook />
+            </a>
+          </Link>
         </div>
         <button
-          onClick={() => window.scroll({ top: 0, left: 0, behavior: "smooth" })}
+          onClick={() => {
+            window.scroll({ top: 0, left: 0, behavior: "smooth" });
+            document.activeElement.blur();
+          }}
+          className="hover-black"
         >
           <p className="text-gray-400">
             <span style={{ fontSize: "1.05em" }}>↑</span>&nbsp;&nbsp;Back to top
           </p>
         </button>
       </div>
-      <Link href="/">
+      <Link href={posts.edges[0].node.slug}>
         <a
-          className="block mt-4 mb-4 p-3"
-          style={{ border: "2px solid #999999", borderRadius: "0.333333rem" }}
+          className="block mt-6 mb-6 p-3 rounded hover-black"
+          style={{ borderWidth: 2, borderStyle: "solid" }}
         >
-          {/* border-radius: 0.333333rem should be made to a global class */}
           <p className="text-gray-400">
             Next:{" "}
             <strong>
-              <em>The Time Machine</em> by H.G. Wells
+              <em>{splitTitle(posts.edges[0].node.title).title}</em> by{" "}
+              {splitTitle(posts.edges[0].node.title).author}
             </strong>
           </p>
         </a>

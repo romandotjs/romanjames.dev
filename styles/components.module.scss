@@ -1,5 +1,19 @@
 .container {
   min-height: 100vh;
+  border-bottom: 0.333333rem solid #4365a3;
+  position: relative;
+
+  // there's a little 1px thin white strip when iOS Safari is full screen mode
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -0.333333rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #4365a3;
+  }
 }
 
 .content {
@@ -9,28 +23,4 @@
   h2 {
     margin: 1.666666rem 0 1rem;
   }
-}
-
-.nav {
-  a:hover, // why does :hover persist after route change on iOS Safari?
-  a:active,
-  button:hover,
-  button:focus {
-    svg {
-      fill: #000000;
-    }
-
-    p {
-      color: #000000;
-    }
-  }
-
-  p {
-    transition: color 0.333333s;
-  }
-}
-
-.image {
-  border-radius: 0.333333rem;
-  width: 100%;
 }

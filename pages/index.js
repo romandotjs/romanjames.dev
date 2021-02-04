@@ -22,7 +22,7 @@ export default function Home({ allPosts: { edges } }) {
           content={heroPost.content}
         />
 
-        <SectionTitle className="mt-4 text-5xl font-black">
+        <SectionTitle className="mt-3 text-5xl font-black">
           Recents
         </SectionTitle>
 

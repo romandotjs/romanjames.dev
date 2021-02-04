@@ -5,3 +5,28 @@
 .text-gray-400 {
   color: #999999;
 }
+
+.hover-black,
+.hover-black p,
+.hover-black svg {
+  color: #999999;
+  fill: #999999;
+  border-color: #999999;
+  transition: color 0.333333s, fill 0.333333s, border-color 0.333333s;
+}
+/* why does :hover persist after route change on iOS Safari? */
+.hover-black:hover,
+.hover-black:active,
+.hover-black:hover p,
+.hover-black:active p,
+.hover-black:hover svg,
+.hover-black:active svg {
+  color: #000000;
+  fill: #000000;
+  border-color: #000000;
+}
+button.hover-black:focus p,
+button.hover-black:focus svg {
+  color: #000000;
+  fill: #000000;
+}
