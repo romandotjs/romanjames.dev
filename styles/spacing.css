@@ -58,6 +58,13 @@
   margin-bottom: 1rem;
 }
 
+/* Margin HORIZONTAL */
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Padding */
 
 .p-1 {

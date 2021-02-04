@@ -13,7 +13,9 @@
 
 .nav {
   a:hover, // why does :hover persist after route change on iOS Safari?
-  a:active {
+  a:active,
+  button:hover,
+  button:focus {
     svg {
       fill: #000000;
     }

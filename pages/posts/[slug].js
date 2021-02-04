@@ -43,12 +43,11 @@ export default function Post({ post, posts }) {
       />
       <div className="mt-4 flex justify-between align-center">
         <div>
-          <Twitter />
+          <Twitter className="mr-3" />
           <Facebook />
         </div>
         <button
           onClick={() => window.scroll({ top: 0, left: 0, behavior: "smooth" })}
-          style={{ border: "none", background: "initial" }}
         >
           <p className="text-gray-400">
             <span style={{ fontSize: "1.05em" }}>↑</span>&nbsp;&nbsp;Back to top

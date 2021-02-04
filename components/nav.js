@@ -1,12 +1,12 @@
 import Link from "next/link";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import cx from "classnames";
-import { PersonCircle } from "../components/icons";
+import { PersonCircle, Exit } from "../components/icons";
 import styles from "../styles/components.module.scss";
 
 export default () => {
-  // const router = useRouter();
-  // const isHome = router.pathname === "/";
+  const router = useRouter();
+  const showBackBtn = router.pathname === "/roman";
 
   return (
     <nav className={cx(styles.nav, "mb-3 flex justify-between align-center")}>
@@ -17,12 +17,18 @@ export default () => {
           </p>
         </a>
       </Link>
-      <Link href="/about">
-        {/* icon itself isn't vertically centered by default */}
-        <a title="About" className="flex align-center">
-          <PersonCircle />
-        </a>
-      </Link>
+      {showBackBtn ? (
+        <button onClick={router.back} className="flex align-center mr-2">
+          <Exit className="flex align-center" />
+        </button>
+      ) : (
+        <Link href="/roman">
+          {/* icon itself isn't vertically centered by default */}
+          <a title="About" className="flex align-center mr-2">
+            <PersonCircle />
+          </a>
+        </Link>
+      )}
     </nav>
   );
 };
