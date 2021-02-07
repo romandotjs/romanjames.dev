@@ -1,5 +1,6 @@
-import styles from "../styles/components.module.scss";
-
-export default ({ src }) => (
-  <img className={`rounded w-full ${styles.image}`} src={src} />
+export default ({ src, insideCard }) => (
+  <img
+    className={`w-full ${insideCard ? "rounded-t-md" : "rounded-md"}`}
+    src={src}
+  />
 );

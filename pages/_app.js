@@ -1,16 +1,14 @@
-import Container from "../components/container";
 import Nav from "../components/nav";
-import "../styles/resets.css";
-import "../styles/colors.css";
 import "../styles/fonts.css";
-import "../styles/layout.css";
-import "../styles/spacing.css";
+import "../styles/globals.css";
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <Container>
-      <Nav />
-      <Component {...pageProps} />
-    </Container>
+    <div className="min-h-screen flex pb-1 bg-gradient-to-r from-black to-gray-400">
+      <div className="p-4 bg-white">
+        <Nav />
+        <Component {...pageProps} />
+      </div>
+    </div>
   );
 }

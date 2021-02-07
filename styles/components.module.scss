@@ -1,26 +1,8 @@
-.container {
-  min-height: 100vh;
-  border-bottom: 0.333333rem solid #4365a3;
-  position: relative;
-
-  // there's a little 1px thin white strip when iOS Safari is full screen mode
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: -0.333333rem;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #4365a3;
-  }
-}
-
 .content {
   p {
-    margin: 1rem 0;
+    @apply mt-4;
   }
   h2 {
-    margin: 1.666666rem 0 1rem;
+    @apply font-black text-3xl mt-7;
   }
 }

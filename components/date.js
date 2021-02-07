@@ -1,4 +1,3 @@
-import cx from "classnames";
 import { parseISO, format } from "date-fns";
 
 export default ({ string, className, timeToRead }) => {
@@ -7,7 +6,7 @@ export default ({ string, className, timeToRead }) => {
     date = date.slice(0, date.length - 6);
 
   return (
-    <p className={cx("text-gray-500", "mt-1", className)}>
+    <p className={`text-gray-500 mt-1.5 ${className}`}>
       <small>
         <time dateTime={string}>{date}</time>
         {timeToRead && <>&nbsp;&nbsp;·&nbsp;&nbsp;{timeToRead}</>}

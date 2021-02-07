@@ -1,45 +1,38 @@
-import Link from "next/link";
 import { Twitter, Instagram, Linkedin, Facebook } from "../components/icons";
+import SocialLink from "../components/social-link";
 
 export default () => (
   <>
-    <img
-      src="/roman.png"
-      alt="Roman's profile image"
-      className="mx-auto mt-6"
-      style={{ width: "10rem", borderRadius: "100%" }}
-    />
-    <h1 className="text-center mt-3 font-black">Roman James</h1>
-    <p className="mt-3">
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello! I am a 17-year-old
-      working in the food industry looking to break through into tech.
-      Specifically, my dream is to become a “digital nomad,” working from coffee
-      shops on people’s digital businesses and eventually (hopefully) on my own
-      apps and websites. A blog for book analysis seems to me like a nice
-      starting place.
-    </p>
-    <p className="mt-6 text-center">Please help build me up!</p>
+    <div className="mt-4 mx-auto flex flex-col w-5/6 shadow-xl rounded-xl">
+      <img
+        src="/roman.jpg"
+        alt="Roman's profile image"
+        className="w-full rounded-t-xl"
+      />
+      <h1 className="text-2xl text-center mt-4 font-black">Roman James</h1>
+      <p className="px-4 pb-6 mt-2">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello! I am a
+        17-year-old working in the food industry looking to break through into
+        tech. Specifically, my dream is to become a “digital nomad,” working
+        from coffee shops on people’s digital businesses and eventually
+        (hopefully) on my own apps and websites. A blog for book analysis seems
+        to me like a nice starting place.
+      </p>
+    </div>
+    <p className="mt-7 text-center">Please help build me up!</p>
     <div className="flex justify-center align-center mt-3 mb-6">
-      <Link href="https://twitter.com/romanthecoder">
-        <a target="_blank" className="mr-3 hover-black">
-          <Twitter />
-        </a>
-      </Link>
-      <Link href="https://instagram.com/romanthecoder">
-        <a target="_blank" className="mr-3 hover-black">
-          <Instagram />
-        </a>
-      </Link>
-      <Link href="https://linkedin.com/in/romanthecoder">
-        <a target="_blank" className="mr-3 hover-black">
-          <Linkedin />
-        </a>
-      </Link>
-      <Link href="https://facebook.com/romanthecoder">
-        <a target="_blank" className="mr-3 hover-black">
-          <Facebook />
-        </a>
-      </Link>
+      <SocialLink href="https://twitter.com/romanthecoder">
+        <Twitter />
+      </SocialLink>
+      <SocialLink href="https://instagram.com/romanthecoder">
+        <Instagram />
+      </SocialLink>
+      <SocialLink href="https://linkedin.com/in/romanthecoder">
+        <Linkedin />
+      </SocialLink>
+      <SocialLink href="https://facebook.com/romanthecoder">
+        <Facebook />
+      </SocialLink>
     </div>
   </>
 );
