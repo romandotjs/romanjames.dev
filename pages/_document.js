@@ -11,56 +11,56 @@ export default class MyDocument extends Document {
             href="/fonts/Lato/lato-v17-latin-regular.woff2"
             as="font"
             type="font/woff2"
-            crossorigin
+            crossOrigin
           />
           <link
             rel="preload"
             href="/fonts/Lato/lato-v17-latin-regular.woff"
             as="font"
             type="font/woff"
-            crossorigin
+            crossOrigin
           />
           <link
             rel="preload"
             href="/fonts/Lato/lato-v17-latin-700.woff2"
             as="font"
             type="font/woff2"
-            crossorigin
+            crossOrigin
           />
           <link
             rel="preload"
             href="/fonts/Lato/lato-v17-latin-700.woff"
             as="font"
             type="font/woff"
-            crossorigin
+            crossOrigin
           />
           <link
             rel="preload"
             href="/fonts/Lato/lato-v17-latin-italic.woff2"
             as="font"
             type="font/woff2"
-            crossorigin
+            crossOrigin
           />
           <link
             rel="preload"
             href="/fonts/Lato/lato-v17-latin-italic.woff"
             as="font"
             type="font/woff"
-            crossorigin
+            crossOrigin
           />
           <link
             rel="preload"
             href="/fonts/Lato/lato-v17-latin-700italic.woff2"
             as="font"
             type="font/woff2"
-            crossorigin
+            crossOrigin
           />
           <link
             rel="preload"
             href="/fonts/Lato/lato-v17-latin-700italic.woff"
             as="font"
             type="font/woff"
-            crossorigin
+            crossOrigin
           />
         </Head>
 

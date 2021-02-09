@@ -1,15 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import cx from "classnames";
 import { PersonCircle, Exit } from "../components/icons";
-import styles from "../styles/components.module.scss";
 
 export default () => {
   const router = useRouter();
   const showBackBtn = router.pathname === "/roman";
 
   return (
-    <nav className={cx(styles.nav, "mb-3 flex justify-between align-center")}>
+    <nav className="mb-3 flex justify-between align-center">
       <Link href="/">
         <a className="text-gray-400 hover:text-black transition duration-300 block mr-4">
           <p className="font-black text-xl">

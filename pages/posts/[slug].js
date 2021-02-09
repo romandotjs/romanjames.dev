@@ -2,14 +2,13 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import ArticleTitle from "../../components/article-title";
 import Img from "../../components/image";
 import Date from "../../components/date";
 import SocialLink from "../../components/social-link";
 import { Twitter, Facebook } from "../../components/icons";
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
 import { SITE_NAME } from "../../lib/constants";
-import { splitTitle, timeToRead } from "../../lib/helpers";
-import styles from "../../styles/components.module.scss";
 
 export default function Post({ post, posts }) {
   const router = useRouter();
@@ -24,6 +23,10 @@ export default function Post({ post, posts }) {
     document.activeElement.blur();
   };
 
+  const contentWithClasses = post.content
+    .replace(/<h2>/gi, `<h2 class="font-black text-3xl mt-7">`)
+    .replace(/<p>/gi, `<p class="mt-4">`);
+
   return (
     <>
       <Head>
@@ -37,20 +40,11 @@ export default function Post({ post, posts }) {
       </Head>
 
       <h1 className="text-3xl font-black">
-        <em>{splitTitle(post.title).title}</em>
-        <br />
-        By {splitTitle(post.title).author}
+        <ArticleTitle lineBreak>{post.title}</ArticleTitle>
       </h1>
-      <Date
-        string={post.date}
-        className="my-3"
-        timeToRead={timeToRead(post.content)}
-      />
+      <Date post={post} className="my-3" />
       <Img src={post.featuredImage?.node?.sourceUrl} />
-      <div
-        className={styles.content}
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
+      <div dangerouslySetInnerHTML={{ __html: contentWithClasses }} />
       <div className="mt-6 flex justify-between align-center">
         <div className="flex">
           <SocialLink
@@ -76,8 +70,7 @@ export default function Post({ post, posts }) {
           <p>
             Next:{" "}
             <strong>
-              <em>{splitTitle(posts.edges[0].node.title).title}</em> by{" "}
-              {splitTitle(posts.edges[0].node.title).author}
+              <ArticleTitle>{posts.edges[0].node.title}</ArticleTitle>
             </strong>
           </p>
         </a>

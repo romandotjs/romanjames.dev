@@ -1,23 +1,22 @@
 import Link from "next/link";
 import Image from "./image";
 import Date from "./date";
-import { splitTitle, timeToRead } from "../lib/helpers";
+import ArticleTitle from "./article-title";
 
 export default ({ node }) => (
   <Link as={`/posts/${node.slug}`} href="/posts/[slug]">
     <a className="block my-4 shadow-xl rounded-xl">
       <article>
         <Image src={node.featuredImage?.node.sourceUrl} insideCard />
-        <div className="p-2.5">
-          <h3 className="font-bold text-md">
-            <em>{splitTitle(node.title).title}</em> by{" "}
-            {splitTitle(node.title).author}
+        <div className="p-4">
+          <h3 className="font-bold text-lg">
+            <ArticleTitle>{node.title}</ArticleTitle>
           </h3>
           <div
             className="mt-1.5"
             dangerouslySetInnerHTML={{ __html: node.excerpt }}
           />
-          <Date string={node.date} timeToRead={timeToRead(node.content)} />
+          <Date post={node} />
         </div>
       </article>
     </a>
