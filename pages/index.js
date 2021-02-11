@@ -4,12 +4,12 @@ import { getAllPostsForHome } from "../lib/api";
 
 export default ({ allPosts: { edges } }) => (
   <main>
-    <SectionTitle className="mt-4">Latest Book</SectionTitle>
+    <SectionTitle>The Latest</SectionTitle>
     <ArticleCard node={edges[0]?.node} />
 
     {edges.length > 1 && (
       <>
-        <SectionTitle className="mt-8">Recents</SectionTitle>
+        <SectionTitle>Recents</SectionTitle>
         {edges.slice(1).map(({ node }, index) => (
           <ArticleCard key={index} node={node} />
         ))}

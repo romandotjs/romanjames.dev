@@ -5,11 +5,11 @@ import ArticleTitle from "./article-title";
 
 export default ({ node }) => (
   <Link as={`/posts/${node.slug}`} href="/posts/[slug]">
-    <a className="block my-4 shadow-xl rounded-xl">
+    <a className="block mb-5 rounded-lg shadow-xl hover:shadow-none transition duration-300">
       <article>
         <Image src={node.featuredImage?.node.sourceUrl} insideCard />
-        <div className="p-4">
-          <h3 className="font-bold text-lg">
+        <div className="p-5 border border-gray-200 dark:border-gray-800 border-t-0 rounded-b-md">
+          <h3 className="font-bold text-xl">
             <ArticleTitle>{node.title}</ArticleTitle>
           </h3>
           <div

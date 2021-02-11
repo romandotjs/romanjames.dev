@@ -24,11 +24,14 @@ export default function Post({ post, posts }) {
   };
 
   const contentWithClasses = post.content
-    .replace(/<h2>/gi, `<h2 class="font-black text-3xl mt-7">`)
-    .replace(/<p>/gi, `<p class="mt-4">`);
+    .replace(
+      /<h2>/gi,
+      `<h2 class="font-black text-4xl mt-8 dark:text-gray-600">`
+    )
+    .replace(/<p>/gi, `<p class="mt-5">`);
 
   return (
-    <>
+    <main>
       <Head>
         <title>
           {post.title} | {SITE_NAME}
@@ -39,13 +42,13 @@ export default function Post({ post, posts }) {
         />
       </Head>
 
-      <h1 className="text-3xl font-black">
+      <h1 className="text-4xl font-black">
         <ArticleTitle lineBreak>{post.title}</ArticleTitle>
       </h1>
-      <Date post={post} className="my-3" />
+      <Date post={post} className="my-3.5" />
       <Img src={post.featuredImage?.node?.sourceUrl} />
       <div dangerouslySetInnerHTML={{ __html: contentWithClasses }} />
-      <div className="mt-6 flex justify-between align-center">
+      <div className="my-7 flex justify-between align-center">
         <div className="flex">
           <SocialLink
             href={`https://twitter.com/intent/tweet?url=${absoluteURL}&text=Interesting read, @romanthecoder`}
@@ -60,13 +63,13 @@ export default function Post({ post, posts }) {
         </div>
         <button
           onClick={scrollToTop}
-          className="text-gray-400 hover:text-black transition duration-300"
+          className="text-gray-400 hover:text-black dark:hover:text-gray-300 transition duration-300"
         >
           <p>↑&nbsp;&nbsp;Back to top</p>
         </button>
       </div>
       <Link href={posts.edges[0].node.slug}>
-        <a className="block my-6 p-3 rounded-md text-gray-400 hover:text-black border-gray-400 hover:border-black border-2 transition duration-300">
+        <a className="block my-7 p-3.5 rounded-md text-gray-400 hover:text-black dark:hover:text-gray-300 border-gray-400 hover:border-black dark:hover:border-gray-300 border-2 transition duration-300">
           <p>
             Next:{" "}
             <strong>
@@ -75,7 +78,7 @@ export default function Post({ post, posts }) {
           </p>
         </a>
       </Link>
-    </>
+    </main>
   );
 }
 

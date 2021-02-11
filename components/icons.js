@@ -3,7 +3,7 @@ const SVGContainer = ({ children, viewBox }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox={viewBox || "0 0 16 16"}
-      className="w-7 h-auto"
+      className="w-8 h-auto"
     >
       {children}
     </svg>
